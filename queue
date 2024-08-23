@@ -1,0 +1,44 @@
+"""
+Description : Program to implement queue using user defined function
+Author : Sangeetha
+Date : 23-08-2024
+"""
+
+class Queue:
+    def __init__(self):
+        # create an empty list to store in queue items
+        self.queue = []
+
+    def enqueue(self, item):
+        # Add the item to the back of the queue
+        self.queue.append(item)
+
+    def dequeue(self):
+        #Remove and return the front item or the first added item from the queue
+        if not self.is_empty():
+            return self.queue.pop(0)
+        else:
+            return "Queue is empty"
+
+    def is_empty(self):
+        #Check if the queue is empty
+        return len(self.queue) == 0
+    
+    def __repr__(self): 
+        # Return a string representation of the queue
+        return f"{self.queue}"
+    
+#Example-
+queue = Queue()
+Q = int(input("Enter the number of elements in the queue: "))
+for i in range(Q):
+    y = int(input('Enter the number of elements in the queue: '))
+    queue.enqueue(y)
+
+print("The queue elements are:",queue)
+
+if queue:
+    print("Element popped is", queue.dequeue())
+    print("Element popped is", queue.dequeue())
+else:
+    print("Queue is empty")
