@@ -1,0 +1,41 @@
+"""
+Description : Program to implement stack
+Author : Sangeetha
+Date : 23-08-2024
+"""
+
+class Stack:
+    def __init__(self):
+        # create an empty list to store in stack items
+        self.stack = []
+
+    def push(self, item):
+        # Add the item to the stack
+        self.stack.append(item)
+
+    def pop(self):
+        # Remove and return the topmost item or the last added item from the stack        
+        if not self.is_empty():
+            return self.stack.pop()
+        else:
+            return "the stack is empty"
+
+    def is_empty(self):
+        # Check if the stack is empty
+        return len(self.stack) == 0
+
+    def __repr__(self):
+        # Return a string representation of the stack
+        return f"{self.stack}"
+
+# Example-
+stack = Stack()
+S= int(input("Enter the number of elements in the stack: "))
+for i in range(S):
+    x = int(input("Enter the element to stack: ")) 
+    stack.push(x) 
+
+print("The elements in the stack are:", stack) 
+
+print("Element popped from stack:", stack.pop())
+print("Element popped from stack:", stack.pop())
