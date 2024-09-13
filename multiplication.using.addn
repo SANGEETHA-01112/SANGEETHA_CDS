@@ -1,0 +1,35 @@
+"""
+Algorithm Name: Program to find multpication using addition operator
+Author: sangeetha
+Date: 13-09-2024
+"""
+
+#Define a class Multiply for multiplication 
+class Multiply:
+
+    #Initializing the Multiply class with two variables x and y to store values
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    #Multipling x and y using repeated addition
+    def multiplies(self):
+        result = 0
+        for idx in range(abs(self.y)):
+            result += abs(self.x)
+        if (self.x < 0 and self.y > 0) or (self.x > 0 and self.y < 0):
+            result *= -1
+        return result
+
+# enter the numbers        
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+#Creating an instance of Multiply class
+multiplier = Multiply(num1,num2)
+
+#Calling multiplies function
+prod = multiplier.multiplies()
+
+#Printing the result
+print(f"Product of {num1} and {num2} is {prod}")
