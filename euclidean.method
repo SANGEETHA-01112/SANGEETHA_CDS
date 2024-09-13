@@ -1,0 +1,32 @@
+"""
+Algorithm Name: Program to perform extended euclidean method
+Author: sangeetha
+Date: 13-09-2024
+"""
+#extended euclidean method used to find gcd(greatest common divisor) of three numbers
+
+#defining a class for extended euclidean method
+class ExtendedEuclidean:
+    def __init__(self, x1, x2, x3):
+        self.x1 = x1
+        self.x2 = x2
+        self.x3 = x3
+
+    def gcd(self, a, b):
+        while b:
+            a, b = b, a % b
+        return a
+
+    def extended_gcd(self, x1, x2, x3):
+        gcd_x1_x2 = self.gcd(x1, x2)
+        gcd_x1_x2_x3 = self.gcd(gcd_x1_x2, x3)
+        return gcd_x1_x2_x3
+
+#printing the result     
+    def run(self):
+        result = self.extended_gcd(self.x1, self.x2, self.x3)
+        print("GCD of {}, {}, and {} is {}".format(self.x1, self.x2, self.x3, result))
+
+# Example usage:
+euclidean = ExtendedEuclidean(12, 15, 21)
+euclidean.run()
